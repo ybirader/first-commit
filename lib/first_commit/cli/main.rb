@@ -21,24 +21,28 @@ class FirstCommit::Cli::Main < FirstCommit::Cli::Base
 
   private
 
-  def valid_project? name
-    name.split("/").size == 2
-  end
+    def valid_project? name
+      name.split("/").size == 2
+    end
 
-  def last_commit(project_name)
-      commits = client.commits(project_name)
-      last_page_pattern = /(?<=<)([\S]*)(?=>; rel="Last")/i;
+    def last_commit(project_name)
+        commits = client.commits(project_name)
+        if empty_project?(commits)
+          puts "This project has no commits."
+        end
 
-      pages_remaining = client.last_response.rels.key?(:next)
+        if pages_remaining?
+          commits.concat(client.get(client.last_response.rels[:last].href))
+        end
 
-      if pages_remaining
-        commits.concat(client.get(client.last_response.rels[:last].href))
-      end
-
-      if commits.size > 0
         puts commits.last.html_url
-      else
-        puts "This project has no commits"
-      end
-  end
+    end
+
+    def empty_project?(commits)
+      commits.size == 0
+    end
+
+    def pages_remaining?
+      client.last_response.rels.key?(:next)
+    end
 end
