@@ -3,6 +3,6 @@
 # Prevent failures from being reported twice.
 Thread.report_on_exception = false
 
-require "first-commit"
+require "first_commit"
 
 FirstCommit::Cli::Main.start(ARGV)
