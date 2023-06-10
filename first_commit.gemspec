@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = "yusuf.birader@hotmail.com"
   spec.summary = "Retrieve the URL of the first commit for any public Github repository"
   spec.license = "MIT"
-  spec.homepage    = "https://github.com/ybirader/first_commit"
+  spec.homepage    = "https://github.com/ybirader/first-commit"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.files = Dir["lib/**/*", "LICENSE.txt", "README.md"]
