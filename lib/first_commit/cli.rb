@@ -1,0 +1,2 @@
+module FirstCommit::Cli
+end

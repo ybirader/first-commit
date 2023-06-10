@@ -1,0 +1,25 @@
+PATH
+  remote: .
+  specs:
+    first_commit (0.1.0)
+      thor (~> 1.2)
+      zeitwerk (~> 2.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.18.0)
+    rake (13.0.6)
+    thor (1.2.2)
+    zeitwerk (2.6.8)
+
+PLATFORMS
+  x86_64-darwin-22
+
+DEPENDENCIES
+  first_commit!
+  minitest (~> 5.0)
+  rake (~> 13.0)
+
+BUNDLED WITH
+   2.4.2
