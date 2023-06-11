@@ -14,7 +14,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-1. Run `first-commit init TOKEN`, where `TOKEN` is a valid personal Github token. For more details, see
+1. Run `first-commit init TOKEN`, where `TOKEN` is a valid Github personal access token. To register a new personal access token, see [here](https://github.com/settings/tokens/new)
 2. Run `first-commit PROJECT_NAME`, which returns the url for the first commit of the project.
 
 For example, `first-commit rails/rails` returns the url of the first commit to Rails.
